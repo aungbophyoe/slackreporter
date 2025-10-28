@@ -33,10 +33,20 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        buildConfig = true // 👈 enable BuildConfig generation
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 group = "aungbophyoe.github.io.slackreporter"
-version = "1.0.0"
+version = "1.0.1"
 
 dependencies {
     implementation(libs.androidx.core.ktx)
