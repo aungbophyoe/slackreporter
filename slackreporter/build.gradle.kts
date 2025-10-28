@@ -27,15 +27,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
     buildFeatures {
-        buildConfig = true // 👈 enable BuildConfig generation
+        buildConfig = true
     }
 
     publishing {
@@ -46,17 +47,12 @@ android {
 }
 
 group = "aungbophyoe.github.io.slackreporter"
-version = "1.0.1"
+version = "1.0.2"
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.koin.core)
-    implementation(libs.koin.android)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
 }
